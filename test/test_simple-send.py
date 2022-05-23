@@ -10,7 +10,7 @@ class TestSimpleSend:
     recieverPk = Address.create("9gcszEx4ev6YQQvxLDZhiWwuvxDnFDvdZkrAW9r9F7bhiHzj9gQ")
     minerFee = int(1e6)
 
-# importing ErgoScript contract
+    # importing ErgoScript contract
     with open(f'contracts/simple-send.es') as f:
         simpleSendScript = f.read()
 
@@ -26,8 +26,9 @@ class TestSimpleSend:
             contract = self.appkit.contractFromAddress(self.senderPk.toString()),
         )
 
+        # anybody can use these as input boxes
         trueBox = self.appkit.buildOutBox(
-            value = int(10e9),
+                value = int(10e9),
                 tokens = None,
                 registers = None,
                 contract = self.appkit.contractFromTree(self.simpleSendTree),

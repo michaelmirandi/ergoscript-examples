@@ -31,7 +31,6 @@ class TestPinlockExtended:
 
     # deposit transaction
     def test_deposit(self):
-        
         # input box
         grantorInputBox = self.appkit.buildInputBox(
             value = int(1000e9),
